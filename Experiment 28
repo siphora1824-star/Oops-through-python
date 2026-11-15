@@ -1,0 +1,21 @@
+class Student:
+    def __init__(self):
+        self.__name = "abc"
+        self.__age = 35
+
+    def set(self, name, age):
+        self.__name = name
+        self.__age = age
+
+    def display(self):
+        print("Name:", self.__name)
+        print("Age:", self.__age)
+
+
+s = Student()
+
+s.display()
+
+s.set("mohan", 99)
+
+s.display()
