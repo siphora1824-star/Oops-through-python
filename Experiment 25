@@ -1,0 +1,43 @@
+lass Node:
+    def __init__(self, data):
+        self.prev = None
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def insertion(self, num):
+        newNode = Node(num)
+
+        if self.head is None:
+            self.head = newNode
+            self.tail = newNode
+        else:
+            self.tail.next = newNode
+            newNode.prev = self.tail
+            self.tail = newNode
+
+    def display(self):
+        temp = self.head
+
+        while temp:
+            print(temp.data, end=" <-> ")
+            temp = temp.next
+
+        print("None")
+
+
+dll = LinkedList()
+
+size = int(input("Enter size = "))
+
+for i in range(size):
+    num = int(input("Enter number = "))
+    dll.insertion(num)
+
+print("Doubly Linked List:")
+dll.display()
