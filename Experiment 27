@@ -1,0 +1,61 @@
+class Animal:
+
+    def sound(self):
+        raise NotImplementedError
+
+class Dog(Animal):
+
+    def sound(self):
+        print("Dog is barking")
+
+class Cat(Animal):
+
+    def sound(self):
+        print("Cat is meowing")
+
+
+A = Dog()
+A.sound()
+
+B = Cat()
+B.sound()class Animal:
+
+    def sound(self):
+        raise NotImplementedError
+
+class Dog(Animal):
+
+    def sound(self):
+        print("Dog is barking")
+
+class Cat(Animal):
+
+    def sound(self):
+        print("Cat is meowing")
+
+
+A = Dog()
+A.sound()
+
+B = Cat()
+B.sound()class Animal:
+
+    def sound(self):
+        raise NotImplementedError
+
+class Dog(Animal):
+
+    def sound(self):
+        print("Dog is barking")
+
+class Cat(Animal):
+
+    def sound(self):
+        print("Cat is meowing")
+
+
+A = Dog()
+A.sound()
+
+B = Cat()
+B.sound()
