@@ -1,0 +1,91 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insertion(self, num):
+        newNode = Node(num)
+
+        if self.head is None:
+            self.head = newNode
+        else:
+            temp = self.head
+            while temp.next is not None:
+                temp = temp.next
+            temp.next = newNode
+
+    def display(self):
+        temp = self.head
+
+        while temp is not None:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+
+        print("None")
+
+    def insertion_at_start(self, a):
+        newNode = Node(a)
+        newNode.next = self.head
+        self.head = newNode
+
+    def insertion_at_end(self, b):
+        newNode = Node(b)
+
+        if self.head is None:
+            self.head = newNode
+        else:
+            temp = self.head
+            while temp.next is not None:
+                temp = temp.next
+
+            temp.next = newNode
+
+    def insertion_at_position(self, c, pos):
+        newNode = Node(c)
+        temp = self.head
+
+        if pos == 1:
+            newNode.next = self.head
+            self.head = newNode
+            return
+
+        itr = 1
+
+        while temp is not None and itr < pos - 1:
+            temp = temp.next
+            itr += 1
+
+        if temp is None:
+            print("Invalid position")
+            return
+
+        newNode.next = temp.next
+        temp.next = newNode
+
+
+sll = LinkedList()
+
+size = int(input("Enter size = "))
+
+for i in range(size):
+    num = int(input("Enter number = "))
+    sll.insertion(num)
+
+a = int(input("Enter a = "))
+sll.insertion_at_start(a)
+
+b = int(input("Enter b = "))
+sll.insertion_at_end(b)
+
+c = int(input("Enter c = "))
+pos = int(input("Enter position = "))
+
+sll.insertion_at_position(c, pos)
+
+print("Linked List:")
+sll.display()
