@@ -1,0 +1,22 @@
+class Student:
+    def __init__(self):
+        self.name = "Mohan"       # Public
+        self._age = 25            # Protected
+        self.__salary = 30000     # Private
+
+    def display(self):
+        print("Name:", self.name)
+        print("Age:", self._age)
+        print("Salary:", self.__salary)
+
+
+s = Student()
+
+print("Public Access:")
+print(s.name)
+
+print("Protected Access:")
+print(s._age)
+
+print("Private Access:")
+s.display()
